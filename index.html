@@ -829,6 +829,48 @@
         display: block;
       }
 
+      .tool-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-block-start: auto;
+        padding-block-start: 0.35rem;
+      }
+
+      .tool-chip,
+      .tool-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        min-block-size: 30px;
+        padding-block: 0.22rem;
+        padding-inline: 0.55rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--ink);
+        background-color: var(--bg-cream);
+        border: 1.5px solid var(--ink);
+        border-radius: 7px;
+        text-decoration: none;
+      }
+
+      .tool-link {
+        background-color: var(--bg-card);
+        box-shadow: 2px 2px 0 var(--ink);
+        transition: transform 0.1s ease, background-color 0.12s ease;
+      }
+
+      .tool-link:hover {
+        background-color: var(--mustard);
+        transform: translate(-1px, -1px);
+      }
+
+      .tool-ico {
+        inline-size: 16px;
+        block-size: 16px;
+        flex: none;
+      }
+
       .sr-only {
         position: absolute;
         width: 1px;
@@ -1035,13 +1077,13 @@
             </article>
 
             <article class="panel panel--mustard">
-              <span class="badge" style="inline-size:fit-content;">APRÈS-MIDI · 13h45 – 17h00</span>
+              <span class="badge" style="inline-size:fit-content;">APRÈS-MIDI · 14h00 – 17h00</span>
               <h3>Méthode &amp; mise en pratique</h3>
               <ul>
-                <li><strong>13h45</strong> · Méthode Vibecoding (Restaurant, Valise Cabine, 3 écrans au feutre)</li>
-                <li><strong>14h28</strong> · Exercice guidé commun en 3 prompts + Kit SOS Debug</li>
-                <li><strong>15h08</strong> · Pause (15 min)</li>
-                <li><strong>15h23</strong> · Mini-Sprint Projet : votre propre application</li>
+                <li><strong>14h00</strong> · Méthode Vibecoding (Restaurant, Valise Cabine, 3 écrans au feutre)</li>
+                <li><strong>14h38</strong> · Exercice guidé commun en 3 prompts + Kit SOS Debug</li>
+                <li><strong>15h12</strong> · Pause (13 min)</li>
+                <li><strong>15h25</strong> · Mini-Sprint Projet : votre propre application</li>
                 <li><strong>16h20</strong> · Crash-test croisé, passer en pro, Quiz final</li>
               </ul>
             </article>
@@ -1090,23 +1132,49 @@
             <span class="badge badge--cobalt">10h25 – 10h40</span>
             <span class="badge">Culture No-Code</span>
           </div>
-          <h2 class="slide-title">Le No-Code, c'est quoi concrètement ?</h2>
+          <h2 class="slide-title">Le No-Code, c'est quoi concrètement&nbsp;?</h2>
 
           <div class="grid-2">
             <div class="panel">
               <h3>Code traditionnel vs No-Code</h3>
-              <svg class="diagram-svg" viewBox="0 0 480 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison entre coder à la main et assembler en No-Code">
-                <rect x="8" y="8" width="464" height="86" rx="10" fill="#F7D9D4" stroke="#181715" stroke-width="2"/>
-                <circle cx="48" cy="51" r="22" fill="#FAF4EB" stroke="#181715" stroke-width="2"/>
-                <path d="M40 60L56 42M46 38L58 50" stroke="#C23B2E" stroke-width="3" stroke-linecap="round"/>
-                <text x="86" y="44" fill="#181715" font-family="sans-serif" font-size="15" font-weight="800">CODE = Arbre + Hache + Équerre</text>
-                <text x="86" y="68" fill="#521712" font-family="sans-serif" font-size="13">Liberté totale, mais long et exigeant techniquement.</text>
+              <svg class="diagram-svg" viewBox="0 0 520 244" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Code égale arbre plus hache plus équerre, No-Code égale meuble en kit IKEA prêt à assembler">
+                <!-- CODE ROW -->
+                <rect x="6" y="6" width="508" height="110" rx="12" fill="#F7D9D4" stroke="#181715" stroke-width="2"/>
+                <!-- Tree -->
+                <rect x="33" y="48" width="10" height="22" rx="2" fill="#6F4E37" stroke="#181715" stroke-width="1.5"/>
+                <circle cx="38" cy="33" r="15" fill="#2F6B4E" stroke="#181715" stroke-width="1.8"/>
+                <circle cx="29" cy="39" r="9" fill="#2F6B4E" stroke="#181715" stroke-width="1.5"/>
+                <circle cx="47" cy="39" r="9" fill="#2F6B4E" stroke="#181715" stroke-width="1.5"/>
+                <text x="64" y="48" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">+</text>
+                <!-- Axe -->
+                <path d="M84 66L108 28" stroke="#6F4E37" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M100 24L118 29L113 43L98 36Z" fill="#DCE7F3" stroke="#181715" stroke-width="1.8" stroke-linejoin="round"/>
+                <text x="126" y="48" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">+</text>
+                <!-- Set Square (Équerre) -->
+                <path d="M144 68V26L184 68H144Z" fill="#E9AD35" stroke="#181715" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M153 59V43L168 59H153Z" fill="#F7D9D4" stroke="#181715" stroke-width="1.4"/>
+                <text x="22" y="96" fill="#521712" font-family="monospace" font-size="10.5" font-weight="700">Arbre + Hache + Équerre</text>
+                <!-- Label -->
+                <text x="206" y="45" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">= CODE (partir de zéro)</text>
+                <text x="206" y="67" fill="#521712" font-family="sans-serif" font-size="12.5">Tout fabriquer à la main : liberté totale,</text>
+                <text x="206" y="84" fill="#521712" font-family="sans-serif" font-size="12.5">mais long et exigeant techniquement.</text>
 
-                <rect x="8" y="108" width="464" height="86" rx="10" fill="#D7EBE0" stroke="#181715" stroke-width="2"/>
-                <rect x="28" y="131" width="40" height="40" rx="6" fill="#E9AD35" stroke="#181715" stroke-width="2"/>
-                <path d="M36 144H60M36 156H52" stroke="#181715" stroke-width="2.5" stroke-linecap="round"/>
-                <text x="86" y="144" fill="#181715" font-family="sans-serif" font-size="15" font-weight="800">NO-CODE = Briques pré-assemblées (IKEA)</text>
-                <text x="86" y="168" fill="#173A29" font-family="sans-serif" font-size="13">Créer des apps web &amp; mobiles sans écrire de ligne de code.</text>
+                <!-- NO-CODE ROW -->
+                <rect x="6" y="128" width="508" height="110" rx="12" fill="#D7EBE0" stroke="#181715" stroke-width="2"/>
+                <!-- IKEA style pill + flatpack kit -->
+                <rect x="20" y="146" width="76" height="32" rx="6" fill="#0051BA" stroke="#181715" stroke-width="1.8"/>
+                <ellipse cx="58" cy="162" rx="32" ry="11" fill="#FFDA1A"/>
+                <text x="58" y="166" text-anchor="middle" fill="#0051BA" font-family="sans-serif" font-size="12" font-weight="900">IKEA</text>
+                <!-- Flatpack shelf + Allen key -->
+                <rect x="110" y="144" width="52" height="44" rx="4" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/>
+                <line x1="110" y1="159" x2="162" y2="159" stroke="#181715" stroke-width="1.5"/>
+                <line x1="110" y1="174" x2="162" y2="174" stroke="#181715" stroke-width="1.5"/>
+                <path d="M172 178V153H186" stroke="#181715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="22" y="216" fill="#173A29" font-family="monospace" font-size="10.5" font-weight="700">Pièces prêtes + notice + clé</text>
+                <!-- Label -->
+                <text x="206" y="166" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">= NO-CODE (assembler)</text>
+                <text x="206" y="188" fill="#173A29" font-family="sans-serif" font-size="12.5">Des briques déjà prêtes à connecter pour</text>
+                <text x="206" y="205" fill="#173A29" font-family="sans-serif" font-size="12.5">sortir une app sans écrire une ligne de code.</text>
               </svg>
             </div>
 
@@ -1123,31 +1191,77 @@
         </section>
 
         <!-- SLIDE 6 (NEW #1): TIMELINE NO-CODE TO VIBECODING -->
-        <section class="slide" data-slide="6" data-phase="Matin · 10h40 · 10 min" data-title="Du tableur au Vibecoding" data-notes="Reprend la frise de ton PDF Introduction No-Code (Visicalc, WordPress, puis 2012-2018 Bubble/Airtable/Zapier/Notion) et montre le saut de 2025-2026 avec le Vibecoding sur un exemple concret : un mini-CRM.">
+        <section class="slide" data-slide="6" data-phase="Matin · 10h40 · 10 min" data-title="Du tableur au Vibecoding" data-notes="Reprend la frise de ton PDF Introduction No-Code (Visicalc, WordPress, Shopify, puis 2012-2018 Bubble/Airtable/Make/Notion) et montre le saut d'aujourd'hui avec AI Studio, Lovable et Claude.">
           <div class="meta-strip">
             <span class="badge badge--cobalt">10h40 – 10h50</span>
             <span class="badge">Évolution</span>
           </div>
-          <h2 class="slide-title">Du tableur au Vibecoding : 3 générations</h2>
+          <h2 class="slide-title">Du tableur au Vibecoding&nbsp;: 3 générations</h2>
 
-          <div class="panel">
-            <svg class="diagram-svg" viewBox="0 0 820 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise chronologique des origines du No-Code jusqu'au Vibecoding">
-              <line x1="36" y1="64" x2="784" y2="64" stroke="#181715" stroke-width="3" stroke-dasharray="6 6"/>
-              <rect x="12" y="18" width="246" height="92" rx="10" fill="#FAF4EB" stroke="#181715" stroke-width="2"/>
-              <text x="26" y="45" fill="#181715" font-family="monospace" font-size="11" font-weight="700">1979–2006 · ORIGINES</text>
-              <text x="26" y="69" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">Visicalc, WordPress, Shopify</text>
-              <text x="26" y="91" fill="#4B443B" font-family="sans-serif" font-size="12">Mettre le web à portée de clic.</text>
+          <div class="grid-3">
+            <article class="panel">
+              <span class="step-tag">1979–2006 · ORIGINES</span>
+              <h3>Le web à portée de clic</h3>
+              <p class="muted">Tableurs visuels, premiers blogs et boutiques en ligne sans coder le serveur.</p>
+              <div class="tool-strip" aria-label="Logos des outils fondateurs">
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#21759B"/><path d="M5.5 12c0 2.6 1.5 4.9 3.7 6L6.1 9.6c-.4.8-.6 1.6-.6 2.4zm10.9-.3c0-.8-.3-1.4-.5-1.8-.3-.5-.6-.9-.6-1.4 0-.6.4-1.1 1.1-1.1h.1c-1.1-1-2.6-1.6-4.3-1.6-2.2 0-4.2 1.1-5.3 2.9h.4c.7 0 1.7-.1 1.7-.1.3 0 .4.5 0 .5 0 0-.4.1-.8.1l2.4 7.1 1.4-4.3-1-2.8c-.4 0-.7-.1-.7-.1-.3 0-.3-.5 0-.5 0 0 1 .1 1.7.1.7 0 1.7-.1 1.7-.1.3 0 .4.5 0 .5 0 0-.4.1-.8.1l2.4 7.1.7-2.2c.3-.9.5-1.6.5-2.1z" fill="#fff"/></svg>
+                  WordPress
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 6.3l-1.4-.3s-.5-2.4-2.5-2.4h-.4C13.7 3 13 2.8 12.4 3c-1.1.3-1.6 1.5-1.8 2.6l-3.1 1L5 19.6l9.8 1.9 5.2-1.2-1.5-14z" fill="#5E8E3E"/><path d="M13.5 10.6c-.4-.2-.9-.3-1.5-.3-1.2 0-2 .8-2 1.9 0 1.2.9 1.7 1.7 2.1.6.3.9.5.9 1 0 .5-.4.8-1 .8-.7 0-1.4-.3-1.8-.6l-.4 1.3c.5.3 1.3.6 2.1.6 1.4 0 2.4-.8 2.4-2.1 0-1.1-.7-1.6-1.6-2-.6-.3-1-.5-1-.9 0-.4.3-.7.9-.7.5 0 1 .2 1.3.3l.4-1.4z" fill="#fff"/></svg>
+                  Shopify
+                </span>
+              </div>
+            </article>
 
-              <rect x="287" y="18" width="246" height="92" rx="10" fill="#DCE7F3" stroke="#181715" stroke-width="2"/>
-              <text x="301" y="45" fill="#162E47" font-family="monospace" font-size="11" font-weight="700">2012–2018 · ÂGE D'OR NO-CODE</text>
-              <text x="301" y="69" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">Bubble, Airtable, Make, Notion</text>
-              <text x="301" y="91" fill="#162E47" font-family="sans-serif" font-size="12">Assembler des briques &amp; des flux.</text>
+            <article class="panel panel--cobalt">
+              <span class="step-tag">2012–2018 · ÂGE D'OR NO-CODE</span>
+              <h3>Briques &amp; automatisations</h3>
+              <p class="muted">Bases relationnelles, interfaces glisser-déposer et scénarios connectés.</p>
+              <div class="tool-strip" aria-label="Logos des outils No-Code">
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3L3 7.5l8 4.5 8-4.5L11 3z" fill="#FCB400"/><path d="M12.5 13v7.5L21 16V8.5l-8.5 4.5z" fill="#18BFFF"/><path d="M10.5 13L2 8.5V16l8.5 4.5V13z" fill="#F82B60"/></svg>
+                  Airtable
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="4.5" fill="#1C0E52"/><circle cx="15" cy="12" r="4.5" fill="#0B5CFF"/><circle cx="19" cy="12" r="2.2" fill="#0B5CFF"/></svg>
+                  Bubble
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.5" fill="#6D00CC"/><rect x="9.7" y="4" width="4.5" height="16" rx="1.5" fill="#9D28FF" transform="rotate(-12 12 12)"/><rect x="16.5" y="4" width="4.5" height="16" rx="1.5" fill="#C94EFF"/></svg>
+                  Make
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/><path d="M8.5 16.5V7.5l7 9V7.5" stroke="#181715" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Notion
+                </span>
+              </div>
+            </article>
 
-              <rect x="562" y="18" width="246" height="92" rx="10" fill="#E9AD35" stroke="#181715" stroke-width="2"/>
-              <text x="576" y="45" fill="#3D2A06" font-family="monospace" font-size="11" font-weight="700">AUJOURD'HUI · VIBECODING</text>
-              <text x="576" y="69" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">AI Studio, Lovable, Claude</text>
-              <text x="576" y="91" fill="#3D2A06" font-family="sans-serif" font-size="12">Piloter l'IA en français pour coder.</text>
-            </svg>
+            <article class="panel panel--mustard">
+              <span class="step-tag">AUJOURD'HUI · VIBECODING</span>
+              <h3>Piloter l'IA en français</h3>
+              <p class="muted">On décrit le besoin, l'IA génère l'application et s'ajuste au fil du dialogue.</p>
+              <div class="tool-strip" aria-label="Logos des outils Vibecoding">
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" fill="#1A73E8"/></svg>
+                  AI Studio
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.5-7-9.8C5 7.7 7.3 5.5 10 5.5c1.5 0 2 .9 2 .9s.5-.9 2-.9c2.7 0 5 2.2 5 5.2 0 5.3-7 9.8-7 9.8z" fill="#E94256"/></svg>
+                  Lovable
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9" stroke="#D97757" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  Claude
+                </span>
+                <span class="tool-chip">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#146EF5"/><path d="M6.5 9l2 6 2.2-4.2L13 15l2.5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Webflow
+                </span>
+              </div>
+            </article>
           </div>
 
           <div class="grid-2">
@@ -1163,25 +1277,54 @@
         </section>
 
         <!-- SLIDE 7: INTEGRATED VS MODULAR -->
-        <section class="slide" data-slide="7" data-phase="Matin · 10h50 · 10 min" data-title="Deux approches No-Code & transition IA" data-notes="Explique la différence entre approche intégrée (Bubble) et modulaire (Tally + Airtable/Notion + Make + Webflow). Montre ensuite le plafond de verre : coût des licences cumulées et courbe d'apprentissage — d'où l'arrivée du Vibecoding.">
+        <section class="slide" data-slide="7" data-phase="Matin · 10h50 · 10 min" data-title="Deux approches No-Code & transition IA" data-notes="Explique la différence entre approche intégrée (Bubble) et modulaire (Tally + Airtable/Notion + Make + Webflow). Clique sur les liens d'outils si tu veux montrer à quoi ressemble leur interface en direct !">
           <h2 class="slide-title">Deux approches No-Code… et leurs limites</h2>
           <div class="grid-2">
             <div class="panel">
               <span class="badge badge--cobalt" style="inline-size:fit-content;">Approche Intégrée</span>
               <h3>Un seul outil pour tout faire</h3>
-              <p class="muted">Interface, base de données et logique réunies au même endroit (ex : <strong>Bubble</strong>, <strong>Adalo</strong>).</p>
-              <p><strong>Limite :</strong> courbe d'apprentissage raide et dépendance à la plateforme.</p>
+              <p class="muted">Interface, base de données et logique réunies au même endroit. Courbe d'apprentissage raide et dépendance à la plateforme.</p>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://bubble.io" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="5" fill="#1C0E52"/><circle cx="17" cy="12" r="3.5" fill="#0B5CFF"/></svg>
+                  Bubble ↗
+                </a>
+                <a class="tool-link" href="https://www.adalo.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 16H4L12 3z" fill="#00A898"/><circle cx="12" cy="14" r="2.5" fill="#FAF4EB"/></svg>
+                  Adalo ↗
+                </a>
+              </div>
             </div>
 
             <div class="panel">
               <span class="badge badge--sage" style="inline-size:fit-content;">Approche Modulaire</span>
               <h3>Associer le meilleur outil par étape</h3>
               <ul>
-                <li><strong>Capter :</strong> Tally, Typeform</li>
-                <li><strong>Stocker :</strong> Notion, Airtable, Google Sheets</li>
-                <li><strong>Automatiser :</strong> Make, Zapier</li>
-                <li><strong>Afficher :</strong> Webflow, Glide, Dorik</li>
+                <li><strong>Capter :</strong> formulaires intelligents · <strong>Stocker :</strong> bases &amp; tableaux</li>
+                <li><strong>Automatiser :</strong> scénarios API · <strong>Afficher :</strong> sites &amp; apps mobiles</li>
               </ul>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://tally.so" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12v3H13.5v8h-3v-8H6V7z" fill="#C23B2E"/></svg>
+                  Tally ↗
+                </a>
+                <a class="tool-link" href="https://www.notion.so" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/><path d="M8.5 16.5V7.5l7 9V7.5" stroke="#181715" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Notion ↗
+                </a>
+                <a class="tool-link" href="https://www.airtable.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3L3 7.5l8 4.5 8-4.5L11 3z" fill="#FCB400"/><path d="M12.5 13v7.5L21 16V8.5l-8.5 4.5z" fill="#18BFFF"/><path d="M10.5 13L2 8.5V16l8.5 4.5V13z" fill="#F82B60"/></svg>
+                  Airtable ↗
+                </a>
+                <a class="tool-link" href="https://www.make.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.5" fill="#6D00CC"/><rect x="9.7" y="4" width="4.5" height="16" rx="1.5" fill="#9D28FF" transform="rotate(-12 12 12)"/><rect x="16.5" y="4" width="4.5" height="16" rx="1.5" fill="#C94EFF"/></svg>
+                  Make ↗
+                </a>
+                <a class="tool-link" href="https://webflow.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#146EF5"/><path d="M6.5 9l2 6 2.2-4.2L13 15l2.5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Webflow ↗
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1214,8 +1357,35 @@
             <span class="badge badge--cobalt">11h15 – 11h25</span>
             <span class="badge">Fondamentaux IA</span>
           </div>
-          <h2 class="slide-title">Un LLM, comment ça marche vraiment ?</h2>
-          <p class="slide-lead">Un <strong>LLM</strong> (Large Language Model) est un modèle prédictif entraîné sur d'immenses volumes de données : il prédit la suite la plus pertinente en fonction de votre prompt.</p>
+          <h2 class="slide-title">Un LLM, comment ça marche vraiment&nbsp;?</h2>
+          <p class="slide-lead">Un <strong>LLM</strong> (Large Language Model) est un modèle prédictif : à partir de votre message dans un chat, il calcule le mot suivant le plus probable.</p>
+
+          <div class="panel panel--flat" style="padding:0.7rem 1rem;">
+            <svg class="diagram-svg" viewBox="0 0 820 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma d'une fenêtre de chat IA prédisant la suite d'une phrase">
+              <rect x="6" y="6" width="276" height="76" rx="10" fill="#FAF4EB" stroke="#181715" stroke-width="2"/>
+              <rect x="6" y="6" width="276" height="22" rx="8" fill="#181715"/>
+              <circle cx="22" cy="17" r="3.5" fill="#C23B2E"/><circle cx="34" cy="17" r="3.5" fill="#E9AD35"/><circle cx="46" cy="17" r="3.5" fill="#2F6B4E"/>
+              <text x="64" y="21" fill="#FAF4EB" font-family="monospace" font-size="10.5" font-weight="700">CHAT PROMPT</text>
+              <text x="20" y="48" fill="#181715" font-family="sans-serif" font-size="13" font-weight="700">« Le chat dort sur le… »</text>
+              <text x="20" y="68" fill="#4B443B" font-family="sans-serif" font-size="11.5">Votre consigne + votre contexte</text>
+
+              <path d="M294 44H334" stroke="#181715" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M327 37L336 44L327 51" stroke="#181715" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <rect x="344" y="10" width="168" height="68" rx="10" fill="#E9AD35" stroke="#181715" stroke-width="2"/>
+              <text x="428" y="38" text-anchor="middle" fill="#181715" font-family="sans-serif" font-size="13.5" font-weight="800">MOTEUR LLM</text>
+              <text x="428" y="58" text-anchor="middle" fill="#3D2A06" font-family="sans-serif" font-size="12">Calcule les probabilités</text>
+
+              <path d="M524 44H564" stroke="#181715" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M557 37L566 44L557 51" stroke="#181715" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <rect x="574" y="6" width="240" height="76" rx="10" fill="#D7EBE0" stroke="#181715" stroke-width="2"/>
+              <text x="590" y="26" fill="#173A29" font-family="monospace" font-size="10.5" font-weight="700">PRÉDICTION DE SUITE</text>
+              <rect x="590" y="34" width="208" height="21" rx="5" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
+              <text x="600" y="49" fill="#181715" font-family="sans-serif" font-size="12" font-weight="700">canapé (68 %) · tapis (22 %)</text>
+              <text x="590" y="71" fill="#173A29" font-family="sans-serif" font-size="11">Plus le contexte est riche, plus c'est juste.</text>
+            </svg>
+          </div>
 
           <div class="grid-3">
             <article class="panel">
@@ -1239,36 +1409,64 @@
         </section>
 
         <!-- SLIDE 10 (NEW #3): WHICH FREE AI FOR WHICH USE -->
-        <section class="slide" data-slide="10" data-phase="Matin · 11h25 · 8 min" data-title="Quel outil IA gratuit pour quel usage ?" data-notes="Repère rapide tiré de la slide « Une grande variété de modèles » de ton PDF IA WinSide. Évite de comparer les scores techniques : donne-leur un réflexe d'usage concret gratuit.">
+        <section class="slide" data-slide="10" data-phase="Matin · 11h25 · 8 min" data-title="Quel outil IA gratuit pour quel usage ?" data-notes="Repère rapide tiré de la slide « Une grande variété de modèles » de ton PDF IA WinSide. Évite de comparer les scores techniques : donne-leur un réflexe d'usage concret gratuit avec lien direct.">
           <div class="meta-strip">
             <span class="badge badge--cobalt">11h25 – 11h33</span>
             <span class="badge badge--sage">Accès gratuit</span>
           </div>
-          <h2 class="slide-title">Quel outil IA gratuit pour quel usage ?</h2>
+          <h2 class="slide-title">Quel outil IA gratuit pour quel usage&nbsp;?</h2>
 
           <div class="grid-4">
             <article class="panel">
               <span class="step-tag">POLYVALENT</span>
               <h3>ChatGPT</h3>
-              <p class="muted">Idéal pour démarrer, structurer des idées, analyser des fichiers et utiliser les modes Canvas.</p>
+              <p class="muted">Idéal pour démarrer, structurer des idées, analyser des fichiers et utiliser le mode Canvas.</p>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="#10A37F"/><path d="M12 6.5a3.2 3.2 0 0 1 2.8 1.6l2.5 1.4a3.2 3.2 0 0 1 0 5l-2.5 1.4a3.2 3.2 0 0 1-5.6 0L6.7 14.5a3.2 3.2 0 0 1 0-5l2.5-1.4A3.2 3.2 0 0 1 12 6.5z" fill="none" stroke="#fff" stroke-width="1.6"/></svg>
+                  Ouvrir ChatGPT ↗
+                </a>
+              </div>
             </article>
 
             <article class="panel panel--mustard">
               <span class="step-tag">CODE &amp; RÉDACTION</span>
               <h3>Claude</h3>
-              <p class="muted">Très fort sur le cadrage produit (PRD), le style naturel en français et les <strong>Artifacts</strong> interactifs.</p>
+              <p class="muted">Très fort sur le cadrage produit, le français naturel et les <strong>Artifacts</strong> interactifs.</p>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://claude.ai" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9" stroke="#D97757" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  Ouvrir Claude ↗
+                </a>
+              </div>
             </article>
 
             <article class="panel panel--cobalt">
               <span class="step-tag">ÉCOSYSTÈME GOOGLE</span>
               <h3>Gemini &amp; AI Studio</h3>
-              <p class="muted">Généreux en gratuit : Canvas, Stitch (maquettes) et <strong>AI Studio Build</strong> pour créer des apps React.</p>
+              <p class="muted">Généreux en gratuit : Canvas, Stitch (maquettes) et <strong>AI Studio Build</strong> pour coder une app.</p>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" fill="#1A73E8"/></svg>
+                  AI Studio ↗
+                </a>
+              </div>
             </article>
 
             <article class="panel panel--sage">
               <span class="step-tag">SOURCES &amp; EUROPE</span>
               <h3>Perplexity / Mistral</h3>
               <p class="muted"><strong>Perplexity</strong> pour chercher avec sources vérifiées ; <strong>Mistral</strong> pour l'alternative européenne RGPD.</p>
+              <div class="tool-strip">
+                <a class="tool-link" href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 7l6 5 6-5M6 17l6-5 6 5" stroke="#20808D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Perplexity ↗
+                </a>
+                <a class="tool-link" href="https://chat.mistral.ai" target="_blank" rel="noopener noreferrer">
+                  <svg class="tool-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="4" height="4" fill="#F2A73B"/><rect x="17" y="4" width="4" height="4" fill="#F2A73B"/><rect x="3" y="8" width="8" height="4" fill="#EA5B26"/><rect x="13" y="8" width="8" height="4" fill="#EA5B26"/><rect x="3" y="12" width="18" height="4" fill="#D93829"/><rect x="3" y="16" width="5" height="4" fill="#181715"/><rect x="16" y="16" width="5" height="4" fill="#181715"/></svg>
+                  Le Chat ↗
+                </a>
+              </div>
             </article>
           </div>
         </section>
@@ -1343,21 +1541,24 @@
         </section>
 
         <!-- SLIDE 13: CRITICAL THINKING, BIASES & GDPR -->
-        <section class="slide" data-slide="13" data-phase="Matin · 11h50 · 10 min" data-title="Esprit critique, biais & RGPD" data-notes="Clin d'œil à tes slides pastèque rouge vs jaune : si l'IA n'a vu que des pastèques rouges dans ses données, elle affirmera avec aplomb qu'une pastèque jaune n'existe pas. Rappelle la règle RGPD pour les auto-entrepreneurs : jamais de fichier client ou données sensibles dans un compte gratuit.">
+        <section class="slide" data-slide="13" data-phase="Matin · 11h50 · 10 min" data-title="Esprit critique, biais & RGPD" data-notes="Clin d'œil à tes slides pastèque rouge vs jaune + recrutement IA : montre des exemples concrets de biais (si l'IA n'a vu que des PDG hommes ou des pastèques rouges, elle reproduit le biais) et d'hallucination (un faux taux URSSAF ou un faux article de loi cité avec aplomb).">
           <h2 class="slide-title">La compétence n°1&nbsp;: la pensée critique</h2>
 
           <div class="grid-3">
             <article class="panel">
-              <svg class="diagram-svg" viewBox="0 0 260 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration de biais : pastèque rouge versus pastèque jaune">
-                <path d="M35 80 A45 45 0 0 1 115 80 Z" fill="#C23B2E" stroke="#181715" stroke-width="2.5"/>
-                <path d="M30 80 A50 50 0 0 1 120 80" stroke="#2F6B4E" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="65" cy="65" r="2.5" fill="#181715"/><circle cx="84" cy="62" r="2.5" fill="#181715"/>
-                <path d="M145 80 A45 45 0 0 1 225 80 Z" fill="#E9AD35" stroke="#181715" stroke-width="2.5"/>
-                <path d="M140 80 A50 50 0 0 1 230 80" stroke="#2F6B4E" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="176" cy="65" r="2.5" fill="#181715"/><circle cx="195" cy="62" r="2.5" fill="#181715"/>
+              <svg class="diagram-svg" viewBox="0 0 260 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration de biais : pastèque rouge versus pastèque jaune">
+                <path d="M35 74 A45 45 0 0 1 115 74 Z" fill="#C23B2E" stroke="#181715" stroke-width="2.5"/>
+                <path d="M30 74 A50 50 0 0 1 120 74" stroke="#2F6B4E" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="65" cy="59" r="2.5" fill="#181715"/><circle cx="84" cy="56" r="2.5" fill="#181715"/>
+                <path d="M145 74 A45 45 0 0 1 225 74 Z" fill="#E9AD35" stroke="#181715" stroke-width="2.5"/>
+                <path d="M140 74 A50 50 0 0 1 230 74" stroke="#2F6B4E" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="176" cy="59" r="2.5" fill="#181715"/><circle cx="195" cy="56" r="2.5" fill="#181715"/>
               </svg>
               <h3>Biais &amp; Hallucinations</h3>
-              <p class="muted">Une IA peut inventer avec beaucoup d'assurance ou reproduire les biais de ses données d'entraînement.</p>
+              <ul style="font-size:0.9rem;">
+                <li><strong>Biais (données) :</strong> si l'IA n'a vu que des pastèques rouges (ou des CV masculins en tech), elle exclut le reste.</li>
+                <li><strong>Hallucination :</strong> elle peut inventer un faux taux URSSAF ou un article de loi avec aplomb.</li>
+              </ul>
             </article>
 
             <article class="panel panel--coral">
@@ -1368,7 +1569,7 @@
 
             <article class="panel panel--sage">
               <h3>Human in the loop</h3>
-              <p>L'IA accélère la production, mais <strong>vous restez responsable</strong> de la logique, de la sécurité et du résultat final.</p>
+              <p>L'IA accélère la production, mais <strong>vous restez responsable</strong> de la logique, des chiffres, de la sécurité et du résultat final.</p>
             </article>
           </div>
         </section>
@@ -1410,90 +1611,129 @@
         </section>
 
         <!-- SLIDE 16: LUNCH -->
-        <section class="slide" data-slide="16" data-phase="Déjeuner · 12h30 · 1h15" data-title="Pause déjeuner" data-notes="Bon appétit ! Reprise à 13h45 précises pour la méthode Vibecoding et la pratique.">
-          <span class="badge badge--mustard" style="inline-size:fit-content;">12h30 – 13h45</span>
-          <h2 class="slide-title">Pause déjeuner — À tout à l'heure !</h2>
+        <section class="slide" data-slide="16" data-phase="Déjeuner · 12h30 · 1h30" data-title="Pause déjeuner" data-notes="Bon appétit ! Reprise à 14h00 précises pour la méthode Vibecoding et la pratique.">
+          <span class="badge badge--mustard" style="inline-size:fit-content;">12h30 – 14h00</span>
+          <h2 class="slide-title">Pause déjeuner — À tout à l'heure à 14h00&nbsp;!</h2>
           <p class="slide-lead">Cet après-midi, c'est vous qui prenez les commandes : méthode architecte, exercice guidé et mini-sprint sur votre propre app.</p>
           <div class="panel panel--flat" style="max-inline-size:62ch;">
-            <h3>Pour bien démarrer à 13h45</h3>
+            <h3>Pour bien démarrer à 14h00</h3>
             <p class="muted">Assurez-vous d'avoir un ordinateur portable chargé et un compte Google, ChatGPT ou Claude gratuit ouvert.</p>
           </div>
         </section>
 
-        <!-- SLIDE 17: RESTAURANT ANALOGY (M01) -->
-        <section class="slide" data-slide="17" data-phase="Après-midi · 13h45 · 13 min" data-title="Anatomie d'une app : Le Restaurant" data-notes="Analogie M01 de ta formation Vibecoding : avant de demander à l'IA de construire une app, il faut savoir de quoi elle est faite. Aujourd'hui en atelier de 3h, on se concentre surtout sur la Salle + la Logique locale (localStorage) pour rester 100 % fluide et gratuit.">
+        <!-- SLIDE 17: RESTAURANT ANALOGY -->
+        <section class="slide" data-slide="17" data-phase="Après-midi · 14h00 · 12 min" data-title="Anatomie d'une app : Le Restaurant" data-notes="[M01] Avant de demander à l'IA de construire une app, il faut savoir de quoi elle est faite. Aujourd'hui en atelier de 3h, on se concentre surtout sur la Salle + la Logique locale (mémoire navigateur) pour rester 100 % fluide et gratuit.">
           <div class="meta-strip">
-            <span class="badge badge--cobalt">13h45 – 13h58</span>
-            <span class="badge">Méthode · Module M01</span>
+            <span class="badge badge--cobalt">14h00 – 14h12</span>
+            <span class="badge">Architecture d'une app</span>
           </div>
           <h2 class="slide-title">Comment fonctionne une app&nbsp;? L'analogie du Restaurant</h2>
 
           <div class="panel">
-            <svg class="diagram-svg" viewBox="0 0 820 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma des 3 couches d'une application web comparées à un restaurant">
-              <rect x="10" y="16" width="235" height="178" rx="12" fill="#F8E5B7" stroke="#181715" stroke-width="2.5"/>
-              <text x="28" y="48" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">1. LA SALLE (Front)</text>
-              <text x="28" y="76" fill="#3D2A06" font-family="sans-serif" font-size="13">Le menu, les tables, les boutons.</text>
-              <text x="28" y="98" fill="#3D2A06" font-family="sans-serif" font-size="13">Ce que l'utilisateur voit et clique</text>
-              <text x="28" y="120" fill="#3D2A06" font-family="sans-serif" font-size="13">(HTML / CSS / React).</text>
-              <rect x="28" y="142" width="198" height="34" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
-              <text x="40" y="164" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Interface &amp; Ergonomie</text>
+            <svg class="diagram-svg" viewBox="0 0 820 232" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma illustré des 3 couches d'une application web comparées à un restaurant">
+              <!-- ZONE 1: LA SALLE -->
+              <rect x="10" y="12" width="235" height="208" rx="12" fill="#F8E5B7" stroke="#181715" stroke-width="2.5"/>
+              <!-- Browser / Menu illustration -->
+              <rect x="28" y="26" width="64" height="44" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/>
+              <rect x="28" y="26" width="64" height="12" rx="4" fill="#181715"/>
+              <rect x="36" y="45" width="48" height="7" rx="2" fill="#E9AD35"/>
+              <rect x="36" y="56" width="28" height="8" rx="2" fill="#C23B2E"/>
+              <text x="104" y="44" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">1. LA SALLE</text>
+              <text x="104" y="62" fill="#3D2A06" font-family="monospace" font-size="11" font-weight="700">Le Front-End</text>
+              <text x="28" y="96" fill="#3D2A06" font-family="sans-serif" font-size="13">Le menu, les tables, les boutons.</text>
+              <text x="28" y="116" fill="#3D2A06" font-family="sans-serif" font-size="13">Ce que l'utilisateur voit et clique</text>
+              <text x="28" y="136" fill="#3D2A06" font-family="sans-serif" font-size="13">(écrans, formulaires, design).</text>
+              <rect x="28" y="164" width="198" height="36" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
+              <text x="40" y="187" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Interface &amp; Ergonomie</text>
 
-              <path d="M252 105 H285" stroke="#181715" stroke-width="3" stroke-linecap="round"/>
-              <path d="M278 97 L288 105 L278 113" stroke="#181715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M252 116 H285" stroke="#181715" stroke-width="3" stroke-linecap="round"/>
+              <path d="M278 108 L288 116 L278 124" stroke="#181715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
-              <rect x="292" y="16" width="235" height="178" rx="12" fill="#DCE7F3" stroke="#181715" stroke-width="2.5"/>
-              <text x="310" y="48" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">2. LE SERVEUR (Logique)</text>
-              <text x="310" y="76" fill="#162E47" font-family="sans-serif" font-size="13">Prend la commande en salle et</text>
-              <text x="310" y="98" fill="#162E47" font-family="sans-serif" font-size="13">l'apporte en cuisine (API / JS).</text>
-              <text x="310" y="120" fill="#162E47" font-family="sans-serif" font-size="13">Calculs, règles, filtres.</text>
-              <rect x="310" y="142" width="198" height="34" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
-              <text x="322" y="164" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Actions &amp; Règles métier</text>
+              <!-- ZONE 2: LE SERVEUR -->
+              <rect x="292" y="12" width="235" height="208" rx="12" fill="#DCE7F3" stroke="#181715" stroke-width="2.5"/>
+              <!-- Cloche / Server tray illustration -->
+              <path d="M316 62 A24 22 0 0 1 364 62 Z" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/>
+              <circle cx="340" cy="36" r="4" fill="#E9AD35" stroke="#181715" stroke-width="1.5"/>
+              <line x1="310" y1="66" x2="370" y2="66" stroke="#181715" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="382" y="44" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">2. LE SERVEUR</text>
+              <text x="382" y="62" fill="#162E47" font-family="monospace" font-size="11" font-weight="700">La Logique / API</text>
+              <text x="310" y="96" fill="#162E47" font-family="sans-serif" font-size="13">Prend la commande en salle et</text>
+              <text x="310" y="116" fill="#162E47" font-family="sans-serif" font-size="13">transmet en cuisine. Fait les</text>
+              <text x="310" y="136" fill="#162E47" font-family="sans-serif" font-size="13">calculs, filtres et vérifications.</text>
+              <rect x="310" y="164" width="198" height="36" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
+              <text x="322" y="187" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Actions &amp; Règles métier</text>
 
-              <path d="M534 105 H567" stroke="#181715" stroke-width="3" stroke-linecap="round"/>
-              <path d="M560 97 L570 105 L560 113" stroke="#181715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M534 116 H567" stroke="#181715" stroke-width="3" stroke-linecap="round"/>
+              <path d="M560 108 L570 116 L560 124" stroke="#181715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
-              <rect x="574" y="16" width="235" height="178" rx="12" fill="#D7EBE0" stroke="#181715" stroke-width="2.5"/>
-              <text x="592" y="48" fill="#181715" font-family="sans-serif" font-size="16" font-weight="800">3. GARDE-MANGER (Data)</text>
-              <text x="592" y="76" fill="#173A29" font-family="sans-serif" font-size="13">Les ingrédients stockés au frais.</text>
-              <text x="592" y="98" fill="#173A29" font-family="sans-serif" font-size="13">En atelier : mémoire navigateur.</text>
-              <text x="592" y="120" fill="#173A29" font-family="sans-serif" font-size="13">En prod : Supabase / Airtable.</text>
-              <rect x="592" y="142" width="198" height="34" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
-              <text x="604" y="164" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Persistance &amp; Données</text>
+              <!-- ZONE 3: LE GARDE-MANGER -->
+              <rect x="574" y="12" width="235" height="208" rx="12" fill="#D7EBE0" stroke="#181715" stroke-width="2.5"/>
+              <!-- Database cylinders illustration -->
+              <ellipse cx="622" cy="34" rx="24" ry="7" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/>
+              <path d="M598 34v28c0 4 10.7 7 24 7s24-3 24-7V34" fill="#FAF4EB" stroke="#181715" stroke-width="1.8"/>
+              <path d="M598 48c0 4 10.7 7 24 7s24-3 24-7" stroke="#181715" stroke-width="1.5"/>
+              <text x="658" y="44" fill="#181715" font-family="sans-serif" font-size="14" font-weight="800">3. GARDE-MANGER</text>
+              <text x="658" y="62" fill="#173A29" font-family="monospace" font-size="11" font-weight="700">Les Données</text>
+              <text x="592" y="96" fill="#173A29" font-family="sans-serif" font-size="13">Là où on stocke les ingrédients.</text>
+              <text x="592" y="116" fill="#173A29" font-family="sans-serif" font-size="13">Aujourd'hui : mémoire locale.</text>
+              <text x="592" y="136" fill="#173A29" font-family="sans-serif" font-size="13">En vrai : Supabase / Airtable.</text>
+              <rect x="592" y="164" width="198" height="36" rx="6" fill="#FAF4EB" stroke="#181715" stroke-width="1.5"/>
+              <text x="604" y="187" fill="#181715" font-family="monospace" font-size="12" font-weight="700">Mémoire &amp; Stockage</text>
             </svg>
           </div>
         </section>
 
-        <!-- SLIDE 18: 80% RULE & CABIN SUITCASE (M02) -->
-        <section class="slide" data-slide="18" data-phase="Après-midi · 13h58 · 10 min" data-title="Règle des 80 % & Valise Cabine" data-notes="L'erreur n°1 des débutants en Vibecoding est d'ouvrir l'outil et de prompter « fais-moi un Airbnb ». En M02, on applique la Valise Cabine : tu pars 3 jours, pas 6 mois. Qu'est-ce qui rentre dans la valise pour résoudre le problème dès aujourd'hui ?">
+        <!-- SLIDE 18: 80% RULE, CABIN SUITCASE & PRD EXPLAINED -->
+        <section class="slide" data-slide="18" data-phase="Après-midi · 14h12 · 8 min" data-title="Règle des 80 % & Valise Cabine" data-notes="[M02] L'erreur n°1 des débutants en Vibecoding est d'ouvrir l'outil et de prompter « fais-moi un Airbnb ». Explique bien ce qu'est un cahier des charges express (PRD) : c'est juste la fiche recette en 10 lignes écrite avant de lancer l'IA.">
+          <div class="meta-strip">
+            <span class="badge badge--cobalt">14h12 – 14h20</span>
+            <span class="badge">Cadrage avant de créer</span>
+          </div>
           <h2 class="slide-title">80 % du succès se joue avant le 1er prompt</h2>
 
           <div class="grid-2">
             <div class="panel panel--mustard">
               <h3>L'analogie de la Valise Cabine</h3>
-              <p>Si vous partez en week-end avec un sac cabine, vous ne prenez pas toute votre armoire : vous choisissez <strong>l'essentiel</strong>.</p>
-              <ul>
-                <li><strong>1 utilisateur précis</strong> (ex : un freelance qui fait ses devis).</li>
-                <li><strong>1 problème concret</strong> à résoudre.</li>
-                <li><strong>2 à 3 fonctionnalités maximum</strong> pour la v1 (MVP).</li>
-              </ul>
+              <svg class="diagram-svg" viewBox="0 0 420 124" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une valise cabine contenant l'essentiel face aux extras superflus laissés dehors">
+                <!-- Suitcase -->
+                <rect x="78" y="12" width="44" height="14" rx="4" fill="none" stroke="#181715" stroke-width="2.5"/>
+                <rect x="18" y="24" width="164" height="86" rx="12" fill="#FAF4EB" stroke="#181715" stroke-width="2.5"/>
+                <rect x="30" y="36" width="140" height="19" rx="4" fill="#D7EBE0" stroke="#181715" stroke-width="1.5"/>
+                <text x="38" y="49" fill="#173A29" font-family="sans-serif" font-size="11" font-weight="700">1. Un utilisateur précis</text>
+                <rect x="30" y="60" width="140" height="19" rx="4" fill="#D7EBE0" stroke="#181715" stroke-width="1.5"/>
+                <text x="38" y="73" fill="#173A29" font-family="sans-serif" font-size="11" font-weight="700">2. Un problème concret</text>
+                <rect x="30" y="84" width="140" height="19" rx="4" fill="#D7EBE0" stroke="#181715" stroke-width="1.5"/>
+                <text x="38" y="97" fill="#173A29" font-family="sans-serif" font-size="11" font-weight="700">3. Max 2 à 3 fonctions</text>
+                <!-- Rejected extras outside -->
+                <rect x="208" y="26" width="198" height="82" rx="10" fill="#F7D9D4" stroke="#181715" stroke-width="2" stroke-dasharray="5 4"/>
+                <text x="220" y="49" fill="#521712" font-family="monospace" font-size="11" font-weight="700">RESTE DEHORS POUR LA V1 :</text>
+                <text x="220" y="70" fill="#521712" font-family="sans-serif" font-size="12">✗ Paiement, chat temps réel,</text>
+                <text x="220" y="88" fill="#521712" font-family="sans-serif" font-size="12">✗ Clone d'Uber ou de Notion.</text>
+              </svg>
+              <p class="muted">Partez léger : ne mettez dans votre première version (MVP) que ce qui résout le besoin dès aujourd'hui.</p>
             </div>
 
-            <div class="panel panel--coral">
-              <h3>Le piège à éviter absolument</h3>
-              <p><strong>« Crée-moi un clone de Notion / Uber avec paiement, chat et IA intégrée. »</strong></p>
-              <p class="muted">Résultat garanti : une interface cassée, des boutons vides et 45 minutes perdues à débugger du vent.</p>
+            <div class="panel">
+              <span class="badge badge--cobalt" style="inline-size:fit-content;">C'est quoi un cahier des charges (PRD)&nbsp;?</span>
+              <h3>Votre fiche de cadrage en 10 lignes</h3>
+              <p class="muted">En anglais on parle de <strong>PRD</strong> (<em>Product Requirements Document</em>). C'est tout simplement la fiche d'identité de votre app, rédigée avec l'IA <strong>avant</strong> de créer les écrans :</p>
+              <ul>
+                <li><strong>Qui</strong> va l'utiliser et pour quel problème ?</li>
+                <li><strong>Quelles</strong> sont les 2–3 actions possibles (pas 15) ?</li>
+                <li><strong>Quels écrans</strong> faut-il afficher ?</li>
+              </ul>
             </div>
           </div>
         </section>
 
         <!-- SLIDE 19: THE 4 STEPS -->
-        <section class="slide" data-slide="19" data-phase="Après-midi · 14h08 · 7 min" data-title="Les 4 étapes du Sprint Vibecoding" data-notes="Présente cette boucle en 4 temps comme la feuille de route de tout l'après-midi. Insiste sur l'étape 3 : une seule modification à la fois (prompting chirurgical, M04).">
+        <section class="slide" data-slide="19" data-phase="Après-midi · 14h20 · 6 min" data-title="Les 4 étapes du Sprint Vibecoding" data-notes="Présente cette boucle en 4 temps comme la feuille de route de tout l'après-midi. Insiste sur l'étape 3 : une seule modification à la fois (prompting chirurgical, M04).">
           <h2 class="slide-title">La méthode en 4 étapes</h2>
           <div class="grid-4">
             <article class="panel">
               <span class="step-tag">1 · CADRER</span>
-              <h3>Mini-PRD Challenger</h3>
-              <p class="muted">Utiliser Claude/ChatGPT pour clarifier utilisateur, écrans et limites du MVP avant de générer.</p>
+              <h3>Fiche projet Challenger</h3>
+              <p class="muted">Utiliser Claude/ChatGPT pour clarifier utilisateur, écrans et limites de la Valise Cabine avant de générer.</p>
             </article>
             <article class="panel">
               <span class="step-tag">2 · DESSINER</span>
@@ -1513,11 +1753,11 @@
           </div>
         </section>
 
-        <!-- SLIDE 20 (NEW #4): 3 SCREENS ON PAPER + ERGONOMICS (M03) -->
-        <section class="slide" data-slide="20" data-phase="Après-midi · 14h15 · 7 min" data-title="3 écrans au feutre & Ergonomie (M03)" data-notes="Module M03 : avant de foncer sur l'ordi pendant le sprint, distribue des feuilles A4. 5 à 10 min au feutre suffisent pour éviter les interfaces confuses. En bonus, ils peuvent même prendre leur dessin en photo et le donner à l'IA ou à Stitch !">
+        <!-- SLIDE 20 (NEW #4): 3 SCREENS ON PAPER + ERGONOMICS -->
+        <section class="slide" data-slide="20" data-phase="Après-midi · 14h26 · 7 min" data-title="3 écrans au feutre & Ergonomie" data-notes="[M03] Avant de foncer sur l'ordi pendant le sprint, distribue des feuilles A4. 5 à 10 min au feutre suffisent pour éviter les interfaces confuses. En bonus, ils peuvent même prendre leur dessin en photo et le donner à l'IA ou à Stitch !">
           <div class="meta-strip">
-            <span class="badge badge--cobalt">Module M03 · Conception</span>
-            <span class="badge">Papier + feutres</span>
+            <span class="badge badge--cobalt">14h26 – 14h33</span>
+            <span class="badge">Conception · Papier + feutres</span>
           </div>
           <h2 class="slide-title">Dessiner 3 écrans au feutre avant de cliquer</h2>
 
@@ -1556,7 +1796,7 @@
         </section>
 
         <!-- SLIDE 21: FREE TOOLSTACK -->
-        <section class="slide" data-slide="21" data-phase="Après-midi · 14h22 · 6 min" data-title="Boîte à outils 100 % gratuite" data-notes="Explique pourquoi on n'utilise pas que Lovable cet après-midi : son quota gratuit (quelques crédits/jour) bloque vite en atelier. Google AI Studio (mode Build) ou Gemini Canvas / Claude Artifacts permettent d'itérer gratuitement tout l'après-midi.">
+        <section class="slide" data-slide="21" data-phase="Après-midi · 14h33 · 5 min" data-title="Boîte à outils 100 % gratuite" data-notes="Explique pourquoi on n'utilise pas que Lovable cet après-midi : son quota gratuit (quelques crédits/jour) bloque vite en atelier. Google AI Studio (mode Build) ou Gemini Canvas / Claude Artifacts permettent d'itérer gratuitement tout l'après-midi.">
           <h2 class="slide-title">Notre boîte à outils 100 % gratuite</h2>
           <div class="retro-table-wrap">
             <table class="retro-table">
@@ -1569,9 +1809,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>1. Cadrer (PRD)</strong></td>
+                  <td><strong>1. Cadrer (Fiche projet)</strong></td>
                   <td>ChatGPT / Claude / Gemini (gratuit)</td>
-                  <td>Rapide pour challenger l'idée et rédiger le cahier des charges.</td>
+                  <td>Rapide pour challenger l'idée et rédiger le cahier des charges en 10 lignes.</td>
                 </tr>
                 <tr>
                   <td><strong>2. Maquetter</strong></td>
@@ -1594,9 +1834,9 @@
         </section>
 
         <!-- SLIDE 22: GUIDED EXERCISE -->
-        <section class="slide" data-slide="22" data-phase="Après-midi · 14h28 · 32 min" data-title="Exercice guidé · Calculateur en 3 prompts" data-notes="Tout le monde ouvre Google AI Studio (ou Gemini Canvas / Claude Artifacts) et réalise exactement la même app en 3 prompts pour prendre l'outil en main sans stress. Clique sur Copier pour leur projeter ou partager.">
+        <section class="slide" data-slide="22" data-phase="Après-midi · 14h38 · 27 min" data-title="Exercice guidé · Calculateur en 3 prompts" data-notes="Tout le monde ouvre Google AI Studio (ou Gemini Canvas / Claude Artifacts) et réalise exactement la même app en 3 prompts pour prendre l'outil en main sans stress. Clique sur Copier pour leur projeter ou partager.">
           <div class="meta-strip">
-            <span class="badge badge--mustard">14h28 – 15h00</span>
+            <span class="badge badge--mustard">14h38 – 15h05</span>
             <span class="badge">Prise en main guidée</span>
           </div>
           <h2 class="slide-title">Exercice commun&nbsp;: un Calculateur TJM en 3 prompts</h2>
@@ -1641,11 +1881,11 @@ Design clair, contraste fort, responsive.</pre>
           </div>
         </section>
 
-        <!-- SLIDE 23 (NEW #5): SOS DEBUG REFLEXES (M04) -->
-        <section class="slide" data-slide="23" data-phase="Après-midi · 15h00 · 8 min" data-title="Kit SOS Debug : quand l'IA se trompe" data-notes="Module M04 : normaliser le fait que ça bugge ! Juste avant la pause et le grand sprint, donne-leur les 3 réflexes de survie pour ne jamais rester bloqués sur un écran rouge.">
+        <!-- SLIDE 23 (NEW #5): SOS DEBUG REFLEXES -->
+        <section class="slide" data-slide="23" data-phase="Après-midi · 15h05 · 7 min" data-title="Kit SOS Debug : quand l'IA se trompe" data-notes="[M04] Normaliser le fait que ça bugge ! Juste avant la pause et le grand sprint, donne-leur les 3 réflexes de survie pour ne jamais rester bloqués sur un écran rouge.">
           <div class="meta-strip">
-            <span class="badge badge--coral">Module M04 · Survie</span>
-            <span class="badge">Anti-panique</span>
+            <span class="badge badge--coral">15h05 – 15h12</span>
+            <span class="badge">Survie &amp; anti-panique</span>
           </div>
           <h2 class="slide-title">Kit SOS Debug&nbsp;: que faire quand ça casse&nbsp;?</h2>
 
@@ -1671,14 +1911,14 @@ Design clair, contraste fort, responsive.</pre>
         </section>
 
         <!-- SLIDE 24: BREAK 2 -->
-        <section class="slide" data-slide="24" data-phase="Pause · 15h08 · 15 min" data-title="Pause de l'après-midi" data-notes="15 minutes pour souffler avant le grand sprint projet ! Distribue quelques feuilles et feutres pour les croquis à la reprise.">
-          <span class="badge badge--mustard" style="inline-size:fit-content;">Pause Après-midi · 15h08 – 15h23</span>
-          <h2 class="slide-title">Pause — Dernière ligne droite à 15h23</h2>
+        <section class="slide" data-slide="24" data-phase="Pause · 15h12 · 13 min" data-title="Pause de l'après-midi" data-notes="13–15 minutes pour souffler avant le grand sprint projet ! Distribue quelques feuilles et feutres pour les croquis à la reprise.">
+          <span class="badge badge--mustard" style="inline-size:fit-content;">Pause Après-midi · 15h12 – 15h25</span>
+          <h2 class="slide-title">Pause — Dernière ligne droite à 15h25</h2>
           <p class="slide-lead">Au retour : vous choisissez votre projet (perso ou parmi nos idées) et vous construisez votre propre application.</p>
-          <div class="timer-panel" data-timer-default="900">
+          <div class="timer-panel" data-timer-default="780">
             <div>
               <p class="muted" style="font-size:0.85rem; font-weight:700;">MINUTEUR PAUSE</p>
-              <div class="timer-display" data-timer-display>15:00</div>
+              <div class="timer-display" data-timer-display>13:00</div>
             </div>
             <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
               <button type="button" class="btn btn--mustard" data-timer-toggle>Démarrer</button>
@@ -1688,9 +1928,9 @@ Design clair, contraste fort, responsive.</pre>
         </section>
 
         <!-- SLIDE 25: MINI-SPRINT PROJECT -->
-        <section class="slide" data-slide="25" data-phase="Après-midi · 15h23 · 57 min" data-title="Mini-Sprint Projet · À vous de créer" data-notes="Lance d'abord 10 min de cadrage (Prompt PM Challenger + 3 écrans sur papier) — interdiction d'ouvrir Google AI Studio avant que la Valise Cabine soit validée ! Puis 45-50 min de construction où tu passes dans les rangs.">
+        <section class="slide" data-slide="25" data-phase="Après-midi · 15h25 · 55 min" data-title="Mini-Sprint Projet · À vous de créer" data-notes="Lance d'abord 10 min de cadrage (Prompt Fiche projet + 3 écrans sur papier) — interdiction d'ouvrir Google AI Studio avant que la Valise Cabine soit validée ! Puis 45 min de construction où tu passes dans les rangs.">
           <div class="meta-strip">
-            <span class="badge badge--mustard">15h23 – 16h20</span>
+            <span class="badge badge--mustard">15h25 – 16h20</span>
             <span class="badge">Solo ou binôme</span>
           </div>
           <h2 class="slide-title">Mini-Sprint&nbsp;: à vous de créer !</h2>
@@ -1722,16 +1962,16 @@ Design clair, contraste fort, responsive.</pre>
             <div style="display:flex; flex-direction:column; gap:0.85rem;">
               <div class="copyable">
                 <div class="copyable-head">
-                  <span class="badge badge--cobalt">Étape 1 · Prompt PM Challenger (10 min)</span>
+                  <span class="badge badge--cobalt">Étape 1 · Prompt Cadrage Challenger (10 min)</span>
                   <span class="copy-wrap">
-                    <button type="button" class="copy-button" command="--copy" commandfor="sprint-prd" aria-label="Copier le prompt PM Challenger">Copier</button>
+                    <button type="button" class="copy-button" command="--copy" commandfor="sprint-prd" aria-label="Copier le prompt Cadrage Challenger">Copier</button>
                     <span class="tip" role="status"></span>
                   </span>
                 </div>
                 <pre class="prompt-pre" id="sprint-prd">Tu es un Product Manager senior exigeant. Mon idée d'application est : [TON IDÉE].
 Challenge mon idée pour appliquer la règle de la "Valise Cabine" (un MVP réalisable en 45 minutes, 100 % côté navigateur, sans base de données externe).
 1) Pose-moi 3 questions courtes si mon besoin est flou.
-2) Rédige un mini-PRD en 10 lignes max : utilisateur cible, 3 fonctionnalités clés, les 2 écrans principaux, et le prompt prêt à coller pour générer la v1.</pre>
+2) Rédige une fiche projet (cahier des charges express) en 10 lignes max : utilisateur cible, 3 fonctionnalités clés, les 2 écrans principaux, et le prompt prêt à coller pour générer la v1.</pre>
               </div>
 
               <div class="copyable">
@@ -1750,10 +1990,10 @@ Explique en 2 phrases la cause, puis corrige UNIQUEMENT ce bug sans modifier le 
         </section>
 
         <!-- SLIDE 26: USER TESTING & SHOW & TELL -->
-        <section class="slide" data-slide="26" data-phase="Après-midi · 16h20 · 25 min" data-title="Crash-test croisé & Show & Tell" data-notes="Module M05 : fais échanger les ordis entre voisins pendant 8 minutes. Règle stricte : le créateur garde les mains dans le dos et ne dit rien ! Puis 3-4 volontaires passent au vidéo-projecteur (2 min max chacun).">
+        <section class="slide" data-slide="26" data-phase="Après-midi · 16h20 · 25 min" data-title="Crash-test croisé & Show & Tell" data-notes="[M05] Fais échanger les ordis entre voisins pendant 8 minutes. Règle stricte : le créateur garde les mains dans le dos et ne dit rien ! Puis 3-4 volontaires passent au vidéo-projecteur (2 min max chacun).">
           <div class="meta-strip">
             <span class="badge badge--sage">16h20 – 16h45</span>
-            <span class="badge">Module M05 · Tests</span>
+            <span class="badge">Tests utilisateurs</span>
           </div>
           <h2 class="slide-title">Crash-test croisé &amp; Show &amp; Tell</h2>
 
@@ -1779,32 +2019,32 @@ Explique en 2 phrases la cause, puis corrige UNIQUEMENT ce bug sans modifier le 
           </div>
         </section>
 
-        <!-- SLIDE 27 (NEW #6): GOING PRO — DATA & SECURITY (M07/M09/M14) -->
-        <section class="slide" data-slide="27" data-phase="Après-midi · 16h45 · 7 min" data-title="Et après jeudi : passer en pro (M07–M14)" data-notes="Slide de culture générale issue des modules M07, M09 et M14 : aujourd'hui tout tournait dans le navigateur. S'ils veulent ouvrir un vrai service à des clients demain, voici les 3 réflexes à connaître sans jargon technique.">
+        <!-- SLIDE 27 (NEW #6): GOING PRO — 3 THINGS TO WATCH OUT FOR -->
+        <section class="slide" data-slide="27" data-phase="Après-midi · 16h45 · 7 min" data-title="Et après jeudi : passer en vrai" data-notes="[Synthèse M07 / M09 / M14 sans acronymes internes] Explique concrètement la différence entre un prototype gratuit qui tourne dans le navigateur et une vraie app ouverte à des clients : 1) stocker durablement (base de données), 2) ne pas se contenter de cacher des boutons (droits d'accès), 3) ne jamais mettre ses clés API payantes dans le code public.">
           <div class="meta-strip">
             <span class="badge badge--cobalt">16h45 – 16h52</span>
-            <span class="badge">Modules M07 · M09 · M14</span>
+            <span class="badge badge--coral">3 points de vigilance</span>
           </div>
-          <h2 class="slide-title">Et après jeudi, si je passe en vrai&nbsp;?</h2>
-          <p class="slide-lead">Aujourd'hui vos données restent dans votre navigateur. Pour accueillir de vrais utilisateurs ou clients, 3 concepts clés entrent en jeu :</p>
+          <h2 class="slide-title">Et après jeudi, si j'ouvre mon app à de vrais clients&nbsp;?</h2>
+          <p class="slide-lead">Aujourd'hui tout reste dans votre navigateur. Pour lancer un vrai service public ou payant, <strong>3 sujets clés</strong> deviennent indispensables :</p>
 
           <div class="grid-3">
             <article class="panel panel--cobalt">
-              <span class="step-tag">BASE DE DONNÉES · M07</span>
-              <h3>Les Classeurs du Cabinet Médical</h3>
-              <p class="muted">Chaque fiche (Clients, Devis, Rendez-vous) vit dans une table dédiée reliée aux autres (ex : <strong>Supabase</strong> ou <strong>Airtable</strong>).</p>
+              <span class="step-tag">1 · VRAIES DONNÉES</span>
+              <h3>Sortir du navigateur</h3>
+              <p class="muted">En atelier, si vous changez de PC, vos données disparaissent. En ligne, on range les fiches (Clients, Devis) dans une <strong>base dédiée</strong> (ex : Supabase, Airtable) reliées entre elles comme des dossiers.</p>
             </article>
 
             <article class="panel panel--coral">
-              <span class="step-tag">PERMISSIONS · M09</span>
-              <h3>Panneau vs Porte fermée à clé</h3>
-              <p class="muted">Cacher un bouton à l'écran ne protège rien : les règles d'accès (<strong>RLS</strong>) doivent verrouiller les données côté base.</p>
+              <span class="step-tag">2 · DROITS D'ACCÈS</span>
+              <h3>Ne pas juste cacher un bouton</h3>
+              <p class="muted">Dire à l'IA <em>« cache l'écran Admin »</em>, c'est juste un panneau <em>« Interdit »</em> : un curieux peut lire la base quand même. Il faut une vraie <strong>porte fermée à clé</strong> côté serveur pour isoler chaque client.</p>
             </article>
 
             <article class="panel panel--mustard">
-              <span class="step-tag">CLÉS API · M14</span>
-              <h3>Adresse postale vs Code CB</h3>
-              <p class="muted">Une clé publique identifie votre app ; une <strong>clé secrète</strong> (API IA, paiement) reste toujours cachée côté serveur.</p>
+              <span class="step-tag">3 · CLÉS PAYANTES</span>
+              <h3>Protéger vos accès API</h3>
+              <p class="muted">L'URL de votre site est publique (comme votre <strong>adresse postale</strong>). Mais vos clés payantes OpenAI ou Stripe sont comme votre <strong>code de carte bleue</strong> : ne les collez jamais dans le code visible du navigateur.</p>
             </article>
           </div>
         </section>
