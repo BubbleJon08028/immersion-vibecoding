@@ -904,9 +904,17 @@
       }
 
       @media print {
-        body, .desk {
+        @page {
+          size: A4 landscape;
+          margin: 8mm;
+        }
+        html, body, .desk {
           background: #ffffff;
           padding: 0;
+          min-block-size: auto;
+          display: block;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
         .crop-mark,
         .topbar,
@@ -923,25 +931,42 @@
           display: none !important;
         }
         .deck-window {
+          display: block;
           border: none;
           box-shadow: none;
           inline-size: 100%;
           min-block-size: auto;
           background: #ffffff;
+          overflow: visible;
         }
         .stage {
+          display: block;
           overflow: visible;
           padding: 0;
         }
         .slide {
           display: flex !important;
           break-inside: avoid;
+          break-after: page;
           page-break-after: always;
-          padding-block: 1rem;
-          border-block-end: 1.5px solid #181715;
+          background-color: var(--bg-cream);
+          border: 1.5px solid var(--ink);
+          border-radius: 12px;
+          padding: 1.1rem 1.4rem;
+          block-size: 184mm;
+          box-sizing: border-box;
+          justify-content: center;
         }
         .slide:last-child {
+          break-after: auto;
           page-break-after: auto;
+        }
+        .slide-title--hero {
+          font-size: 2.35rem;
+        }
+        .hero-layout {
+          grid-template-columns: 1.25fr 0.9fr;
+          gap: 1.1rem;
         }
         .panel, .copyable, .quiz-box, .retro-table-wrap, .timer-panel {
           box-shadow: none;
